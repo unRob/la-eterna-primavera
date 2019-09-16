@@ -1,0 +1,40 @@
+{
+  "name": "la-eterna-primavera",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-preset-minify": "^0.5.1",
+    "lodash.throttle": "^4.1.1",
+    "rollup": "^1.21.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "scripts": {
+    "build:bundle": "rollup --config",
+    "prebuild:screenshots": "cp -r src/screenshots dist/screenshots",
+    "build:screenshots": "find dist/screenshots -type d -name 'section*' -exec mogrify -quality 80 -strip -sampling-factor 4:2:0 -interlace Plane -colorspace sRGB {}/*.jpg \\;",
+    "build:static": "cp src/index.{css,html} dist/; cp -r src/img dist/",
+    "prebuild": "rm -rf dist; mkdir -p ./dist",
+    "dev": "mkdir -p ./dist && npm run build:static && npm run build:bundle",
+    "build": "npm run build:bundle && npm run build:static && npm run build:screenshots",
+    "predocker": "npm run build",
+    "docker": "docker build --tag la-eterna-primavera . && docker run --rm -it -p 8080:80 la-eterna-primavera",
+    "setup": "cp -v --no-clobber src/config.template.js src/config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unRob/la-eterna-primavera.git"
+  },
+  "author": "Valentina Sarmiento Cruz",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/unRob/la-eterna-primavera/issues"
+  },
+  "homepage": "https://github.com/unRob/la-eterna-primavera#readme"
+}
