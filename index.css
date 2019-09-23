@@ -1,0 +1,210 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+img {
+  width: 100%;
+}
+
+header img {
+  padding: .5em 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 1em;
+}
+
+header blockquote {
+  margin: 0;
+}
+
+blockquote p {
+  font-style: italic;
+}
+
+blockquote footer {
+  font-size: .8em;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  position: fixed !important;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  transition: opacity .5s ease-out;
+}
+
+#map.hidden {
+  opacity: 0
+}
+
+#screenshots {
+  position: fixed !important;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#screenshots .image {
+  position:absolute; 
+  left:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+#screenshots .image:first-child {
+  z-index: 1;
+}
+
+#screenshots .image.shown {
+  opacity: 1;
+}
+
+#content {
+  width: 410px;
+  background: #fff;
+  z-index: 10000;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#fake-search {
+  position: fixed;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2),0 -1px 0px rgba(0,0,0,0.02);
+  border-radius: 8px;
+  background: #fff;
+  width: 390px;
+  margin: .5em;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#fake-search span {
+  font-size: 15px;
+  line-height: 24px;
+  display: block;
+  padding-left: 1.5em;
+}
+
+#fake-search span::before {
+  font-family: Arial, Helvetica, sans-serif;
+  content: '——';
+  font-weight: bold;
+  border-top: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  color: #aaa;
+  line-height: 4px;
+  letter-spacing: 0;
+  padding-bottom: 2px;
+  margin-right: 1em;
+  transform: translateY(-3);
+}
+
+.text-section {
+  padding: 1em;
+}
+
+h1 {
+  line-height: 1.75rem;
+  margin: 0;
+}
+
+h2.translation {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+#review {
+  padding: 1em;
+}
+
+.light-gray {
+  color: #757575;
+  font-size: .875em;
+}
+
+.stars {
+  color: #fbbc05;
+}
+
+@media screen and (max-width: 1024px) {
+  #content {
+    width: 380px;
+  }
+
+  #screenshots {
+    background: #220;
+  }
+
+  #screenshots .image {
+    background-size: contain;
+    background-position: right center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    background-color: transparent;
+    width: 100%;
+  }
+
+  #content header {
+    background: #fff;
+  }
+
+  .text-section h2, .text-section p, #review {
+    background: #fff;
+    padding: 1em;
+  }
+
+  .text-section h2 {
+    margin: 0;
+  }
+
+  .text-section p {
+    margin: 0;
+  }
+
+  .text-section {
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  p.control-map {
+    margin-top: 50vh;
+  }
+
+  #screenshots {
+    background: #220;
+  }
+
+  #screenshots .image {
+    background-size: contain;
+    background-position: middle center;
+  }
+}
