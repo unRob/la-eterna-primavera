@@ -5,13 +5,13 @@
   "main": "index.js",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-preset-minify": "^0.5.1",
     "lodash.throttle": "^4.1.1",
-    "rollup": "^1.21.3",
-    "rollup-plugin-babel": "^4.3.3",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
@@ -25,7 +25,7 @@
     "build": "npm run build:bundle && npm run build:static && npm run build:screenshots",
     "predocker": "npm run build",
     "docker": "docker build --tag la-eterna-primavera . && docker run --rm -it -p 8080:80 la-eterna-primavera",
-    "setup": "cp -v --no-clobber src/config.template.js src/config.js"
+    "setup": "cp -v src/config.template.js src/config.js"
   },
   "repository": {
     "type": "git",

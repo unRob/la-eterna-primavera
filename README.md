@@ -10,7 +10,7 @@ Follow the instructions to create a [Google Maps API Key](https://developers.goo
 
 ```sh
 # get the build dependencies
-npm install --dev
+npm install --also=dev
 # create a config file
 npm run setup
 ```
